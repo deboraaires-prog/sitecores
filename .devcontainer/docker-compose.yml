@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  php:
+    image: php:8.2-cli
+    volumes:
+      - ..:/workspace
+    working_dir: /workspace
+    depends_on:
+      - db
+    # não definimos command aqui porque vamos rodar via postCreateCommand do devcontainer
+    ports:
+      - "8000:8000"
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      # opcionalmente permitir host arbitrário:
+      PMA_ARBITRARY: 1
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:
