@@ -1,0 +1,13 @@
+{
+  "name": "PHP & MariaDB",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  "features": {
+    "ghcr.io/devcontainers/features/php:1": {},
+    "ghcr.io/devcontainers/features/mariadb:1": {}
+  },
+
+  "forwardPorts": [8080],
+
+  "postCreateCommand": "sudo a2enmod rewrite"
+}
