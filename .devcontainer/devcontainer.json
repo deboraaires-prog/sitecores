@@ -1,13 +1,15 @@
 {
-  "name": "PHP & MariaDB",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-
-  "features": {
-    "ghcr.io/devcontainers/features/php:1": {},
-    "ghcr.io/devcontainers/features/mariadb:1": {}
-  },
-
-  "forwardPorts": [8080],
-
-  "postCreateCommand": "sudo a2enmod rewrite"
+  "name": "PHP + MySQL + phpMyAdmin",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "php",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8000, 8080, 3306],  
+  "postCreateCommand": "php -S 0.0.0.0:8000 -t src",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client"
+      ]
+    }
+  }
 }
