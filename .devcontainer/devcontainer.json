@@ -1,13 +1,19 @@
 {
-  "name": "PHP + MySQL + phpMyAdmin",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "php",
-  "workspaceFolder": "/workspace",
-  "forwardPorts": [8000, 8080, 3306],
-  "postCreateCommand": "php -S 0.0.0.0:8000 -t src",
-  "customizations": {
-    "vscode": {
-      "extensions": ["bmewburn.vscode-intelephense-client"]
-    }
-  }
+    "name": "PHP & MySQL",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "xdebug.php-debug",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+
+    "forwardPorts": [8080],
+    "postCreateCommand": "sudo chown -R vscode:vscode /workspace && sudo chmod -R 775 /workspace"
 }
