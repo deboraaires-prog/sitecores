@@ -6,9 +6,7 @@
   "forwardPorts": [8000, 8080, 3306],
   "customizations": {
     "vscode": {
-      "extensions": [
-        "bmewburn.vscode-intelephense-client"
-      ]
+      "extensions": ["bmewburn.vscode-intelephense-client"]
     }
   }
 }
