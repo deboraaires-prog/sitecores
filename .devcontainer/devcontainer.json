@@ -2,7 +2,6 @@
   "name": "PHP + MySQL + phpMyAdmin",
   "dockerComposeFile": "docker-compose.yml",
   "service": "php",
-  "workspaceFolder": "/workspace",
   "forwardPorts": [8000, 8080, 3306],  
   "postCreateCommand": "php -S 0.0.0.0:8000 -t src",
   "customizations": {
