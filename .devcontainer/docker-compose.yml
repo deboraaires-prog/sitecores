@@ -8,7 +8,6 @@ services:
     working_dir: /workspace
     depends_on:
       - db
-    # não definimos command aqui porque vamos rodar via postCreateCommand do devcontainer
     ports:
       - "8000:8000"
 
@@ -31,7 +30,6 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      # opcionalmente permitir host arbitrário:
       PMA_ARBITRARY: 1
       MYSQL_ROOT_PASSWORD: root
     ports:
