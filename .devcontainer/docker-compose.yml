@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   php:
-    image: php:8.2-cli
+    image: mcr.microsoft.com/devcontainers/php:0-8.2
     volumes:
       - .:/workspace
     working_dir: /workspace
