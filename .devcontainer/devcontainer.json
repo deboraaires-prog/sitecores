@@ -2,7 +2,7 @@
     "name": "PHP & MySQL",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
-    "workspaceFolder": "/workspace",
+    "workspaceFolder": "/var/www/html",
 
     "customizations": {
         "vscode": {
