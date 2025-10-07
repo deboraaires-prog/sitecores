@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-    php:
+  php:
     image: mcr.microsoft.com/devcontainers/php:0-8.2
     volumes:
       - .:/workspace
@@ -10,7 +10,6 @@ services:
       - db
     ports:
       - "8000:8000"
-    command: sh -c "php -S 0.0.0.0:8000 -t src"
 
   db:
     image: mysql:8.0
@@ -32,9 +31,4 @@ services:
       PMA_HOST: db
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "8080:80"
-
-volumes:
-  db_data:
+      MYSQL_ROOT_PASSWORD: roo
