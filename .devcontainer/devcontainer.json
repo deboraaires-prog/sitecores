@@ -4,7 +4,7 @@
   "service": "php",
   "workspaceFolder": "/workspace",
   "forwardPorts": [8000, 8080, 3306],
-  "postCreateCommand": "ls -la /workspace",
+"postCreateCommand": "echo Setup completo",
   "customizations": {
     "vscode": {
       "extensions": [
