@@ -1,15 +1,16 @@
 version: '3.8'
 
 services:
-  php:
-    image: php:8.2-cli
-    volumes:
-      - .:/workspace
-    working_dir: /workspace
-    depends_on:
-      - db
-    ports:
-      - "8000:8000"
+php:
+  image: php:8.2-cli
+  volumes:
+    - .:/workspace
+  working_dir: /workspace
+  depends_on:
+    - db
+  ports:
+    - "8000:8000"
+  command: php -S 0.0.0.0:8000 -t src
 
   db:
     image: mysql:8.0
