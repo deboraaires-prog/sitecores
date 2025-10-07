@@ -4,7 +4,7 @@ services:
   php:
     image: php:8.2-cli
     volumes:
-      - ..:/workspace
+      - .:/workspace
     working_dir: /workspace
     depends_on:
       - db
